@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#140923">
+<meta name="description" content="Un universo de flores moradas para esa persona especial. 9 de octubre: admiración, gratitud y cariño sincero.">
+<title>Flores Moradas </title>
+<style>
+:root{--lav:#e7caff;--purple:#b96cff;--bg:#080311}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:white;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}button{font:inherit;cursor:pointer}#sky{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}#vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle,transparent 28%,rgba(3,0,12,.55) 100%)}.top{position:fixed;top:0;left:0;right:0;z-index:3;padding:20px clamp(18px,4vw,50px);display:flex;align-items:center;justify-content:space-between;gap:15px;pointer-events:none}.brand{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#e8ccff}.date{font-size:12px;color:#c5a0e5;letter-spacing:1px}.hero{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:25px;pointer-events:none;z-index:2;transition:opacity .8s}.hero.hide{opacity:0}.eyebrow{letter-spacing:4px;text-transform:uppercase;font-size:12px;color:#d3a1ff}.hero h1{font-family:Georgia,serif;font-size:clamp(45px,8vw,104px);line-height:1.03;margin:15px 0;background:linear-gradient(110deg,#fff,#dbb3ff,#a669f4);color:transparent;background-clip:text;text-shadow:0 0 60px #b34dff55}.hero p{max-width:570px;font-size:clamp(15px,2vw,19px);line-height:1.7;color:#e7d8f4}.actions{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:5;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;width:min(95%,700px)}.btn{border:1px solid #bd87e9aa;border-radius:100px;padding:13px 19px;color:white;background:#29133bdb;backdrop-filter:blur(15px);box-shadow:0 8px 35px #0005;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-3px);background:#542475}.btn.primary{background:linear-gradient(120deg,#8536cd,#c57bff);border-color:#e8bbff;color:white;font-weight:700}.credit{position:fixed;left:22px;bottom:18px;font-size:11px;color:#9479a9;z-index:2}.modal{position:fixed;inset:0;z-index:20;background:#06020bdc;backdrop-filter:blur(16px);display:grid;place-items:center;padding:20px}.modal[hidden]{display:none}.letter{position:relative;max-width:540px;width:100%;max-height:88vh;overflow-y:auto;border:1px solid #b97aff99;border-radius:25px;background:radial-gradient(circle at top,#3e2059,#170c29 65%);padding:clamp(25px,5vw,48px);box-shadow:0 0 100px #a84aff44;text-align:center;animation:rise .4s ease}.letter .flower{font-size:55px}.letter h2{font-family:Georgia,serif;font-size:clamp(27px,5vw,39px);color:#e9c9ff;margin:12px 0}.letter p{font-size:16px;line-height:1.85;color:#eadff2}.letter strong{color:#f2caff}.close{position:absolute;right:16px;top:12px;border:0;background:transparent;color:white;font-size:30px}.intro{position:fixed;inset:0;z-index:30;background:radial-gradient(circle,#32114c,#090311 70%);display:grid;place-items:center;text-align:center;cursor:pointer;transition:opacity .8s}.intro.out{opacity:0;pointer-events:none}.intro-inner{padding:20px;animation:breathe 2.8s ease-in-out infinite}.intro-flower{font-size:clamp(110px,23vw,190px);filter:drop-shadow(0 0 35px #bc65ff);display:block}.intro h2{font-family:Georgia,serif;font-size:clamp(28px,5vw,46px);margin:12px 0;color:#eacbff}.intro p{letter-spacing:2px;color:#bfa0d4}.petal{position:fixed;z-index:35;pointer-events:none;font-size:25px;animation:explode 1.5s ease-out forwards}@keyframes explode{to{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}@keyframes breathe{50%{transform:scale(1.06)}}@keyframes rise{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}@media(max-width:600px){.top{padding:17px}.brand{letter-spacing:1px}.hero{padding-bottom:80px}.actions{bottom:24px}.btn{padding:12px 14px;font-size:13px}.credit{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Título equilibrado */
+.hero{justify-content:center;padding:72px 20px 165px;gap:0}
+.hero h1{font-size:clamp(38px,5.1vw,72px);line-height:1.05;margin:10px 0 12px;max-width:90vw}
+.hero p{font-size:clamp(13px,1.3vw,16px);max-width:470px;line-height:1.55;margin:0}
+.eyebrow{font-size:clamp(9px,1vw,11px);letter-spacing:2.4px}
+
+/* === CONTROL DE MÚSICA: BOTÓN CIRCULAR FLOTANTE MORADO === */
+.music-controls{
+  position:fixed;
+  z-index:8;
+  bottom:28px;
+  right:22px;
+  width:52px;height:52px;
+  border-radius:50%;
+  border:2px solid #c57bff;
+  background:#1a0a2e;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  transition:transform .2s, box-shadow .3s;
+  box-shadow:
+    0 0 0 4px #c57bff22,
+    0 0 18px 4px #b96cff88,
+    0 0 36px 8px #8b3fd655,
+    inset 0 0 12px #c57bff44;
+  animation:musicPulse 2.4s ease-in-out infinite;
+}
+.music-controls:hover{
+  transform:scale(1.08);
+  box-shadow:
+    0 0 0 5px #c57bff33,
+    0 0 22px 6px #b96cffbb,
+    0 0 44px 12px #8b3fd677,
+    inset 0 0 14px #c57bff66;
+}
+@keyframes musicPulse{
+  0%,100%{box-shadow:0 0 0 4px #c57bff22,0 0 18px 4px #b96cff88,0 0 36px 8px #8b3fd655,inset 0 0 12px #c57bff44}
+  50%{box-shadow:0 0 0 6px #c57bff33,0 0 24px 6px #b96cffaa,0 0 46px 12px #8b3fd666,inset 0 0 14px #c57bff66}
+}
+.music-controls button{
+  background:none;
+  border:0;
+  color:#fff;
+  font-size:22px;
+  line-height:1;
+  padding:0;
+  width:100%;height:100%;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  filter:drop-shadow(0 0 4px #c57bff);
+}
+.music-controls input,
+.music-controls output{display:none}
+.music-controls[hidden]{display:none}
+
+/* Móvil */
+@media(max-width:600px){
+  .music-controls{
+    width:44px;height:44px;
+    top:60px;
+    right:12px;
+    bottom:auto;
+  }
+  .music-controls button{font-size:17px}
+}
+
+/* Flor de ocho pétalos: entrada individual en espiral */
+.intro{background:radial-gradient(circle at 50% 43%,#39135d 0%,#19082c 48%,#080311 100%);overflow:hidden}
+.intro-inner{animation:none!important;display:flex;flex-direction:column;align-items:center;max-width:100%;padding:20px}
+.flower-stage{position:relative;width:clamp(205px,44vw,280px);height:clamp(205px,44vw,280px);display:grid;place-items:center;margin-bottom:20px}
+.flower-halo{position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle,#e2b5ff99,#a04dff55 40%,transparent 72%);filter:blur(18px);animation:haloPulse 3s ease-in-out infinite}
+@keyframes haloPulse{50%{transform:scale(1.15);opacity:.65}}
+.flower-ring{position:absolute;inset:0;border-radius:50%;pointer-events:none;border:2px solid transparent;border-top-color:#c57bff;border-right-color:#c57bff;animation:spinRing 4s linear infinite}
+.flower-ring.second{inset:13px;border-top-color:transparent;border-right-color:transparent;border-bottom-color:#e7caff;border-left-color:#e7caff;animation-duration:3s;animation-direction:reverse}
+@keyframes spinRing{to{transform:rotate(360deg)}}
+.flower-svg{position:relative;z-index:2;width:74%;height:74%;overflow:visible;filter:drop-shadow(0 0 17px #a95aff99)}
+.bloom-petal{opacity:0;transform-box:view-box;transform-origin:100px 100px;transform:translate(var(--sx),var(--sy)) rotate(-150deg) scale(.35);animation:spiralJoin 1.25s cubic-bezier(.18,.72,.2,1) var(--delay) forwards}
+@keyframes spiralJoin{
+  0%{opacity:0;transform:translate(var(--sx),var(--sy)) rotate(-150deg) scale(.35)}
+  30%{opacity:1}
+  60%{transform:translate(var(--mx),var(--my)) rotate(-55deg) scale(.88)}
+  82%{transform:translate(var(--ex),var(--ey)) rotate(12deg) scale(1.04)}
+  100%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}
+}
+.flower-core{opacity:0;transform-box:view-box;transform-origin:100px 100px;animation:coreAppear .75s cubic-bezier(.2,1.5,.4,1) 3.75s forwards;transform:scale(0)}
+@keyframes coreAppear{to{opacity:1;transform:scale(1)}}
+.intro h2{font-size:clamp(25px,4.5vw,40px);margin:5px 0 12px}
+.intro p{font-size:clamp(10px,1.5vw,12px);letter-spacing:1.6px}
+.hero{inset:auto!important;top:0!important;left:0!important;right:0!important;display:flex;justify-content:flex-start!important;padding:75px 16px 0!important}
+.hero h1{font-size:clamp(22px,2.7vw,35px)!important;margin:5px 0!important;line-height:1.15}
+.hero p{max-width:390px!important;font-size:clamp(11px,1vw,13px)!important;line-height:1.45!important}
+.hero .eyebrow{font-size:10px;letter-spacing:2px}
+@media(max-width:600px){.flower-stage{width:min(68vw,255px);height:min(68vw,255px)}.hero{padding:72px 14px 0!important}.hero h1{font-size:clamp(20px,5.6vw,26px)!important}.hero p{max-width:270px!important;font-size:11px!important}.hero .eyebrow{font-size:8px;letter-spacing:1px}.intro p{max-width:90vw}}
+@media(max-height:600px){.flower-stage{width:175px;height:175px;margin-bottom:8px}.intro h2{font-size:24px}.intro p{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.bloom-petal,.flower-core{animation-duration:.01ms!important;animation-delay:0ms!important}}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-label="Galaxia animada de flores moradas"></canvas><div id="vignette"></div>
+<header class="top"><div class="brand">✦ Universo Morado</div><div class="date"> · PARA TI · 💜</div></header>
+<section class="hero" id="hero"><div class="eyebrow">Para alguien que hace la vida más bonita</div><h1>Flores<br>Moradas</h1><p>Hay personas que no necesitan hacer ruido para iluminar nuestra vida. Este pequeño universo es para agradecerte por ser una de ellas.</p></section>
+<audio id="backgroundMusic" src="./musica.mp3" preload="none" loop></audio>
+<div class="music-controls" id="musicControls" hidden aria-label="Controles de música"><button id="muteMusic" type="button" aria-label="Silenciar música" title="Silenciar o activar música">🔊</button></div>
+<div class="actions"><button class="btn primary" id="open">💌 Leer tu mensaje</button><button class="btn" id="phrases">✨ Descubrir un mensaje</button><button class="btn" id="reset">↺ Volver al inicio</button><button class="btn" id="share">↗ Compartir</button></div>
+<div class="credit">Hecho con 💜</div>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="letter-title"><article class="letter"><button class="close" id="close" aria-label="Cerrar mensaje">×</button><div class="flower">🪻</div><h2 id="letter-title">Para ti, con mucho cariño</h2><p>Dicen que las flores moradas representan admiración, respeto, gratitud y afecto sincero. Y hoy quiero regalarte algo que reúne un poquito de todo eso.</p><p>Gracias por ser una presencia bonita, por escuchar, por acompañar y por demostrar que hay personas que se sienten como un lugar seguro. No importa si nos unen risas, recuerdos, familia, amistad o amor: <strong>tu forma de ser merece celebrarse.</strong></p><p>Ojalá nunca olvides lo mucho que vales, lo admirable que eres y lo especial que puede ser tu compañía para alguien.</p><p><strong>Feliz 9 de octubre. Estas flores moradas son para ti. 💜</strong></p></article></div>
+<div class="modal" id="phraseModal" hidden role="dialog" aria-modal="true" aria-labelledby="phraseTitle"><article class="letter"><button class="close" id="closePhrase" aria-label="Cerrar frase">×</button><div class="flower">💜</div><h2 id="phraseTitle">Un mensaje para ti</h2><p id="randomPhrase"></p><button class="btn primary" id="another">✨ Otro mensaje</button></article></div>
+<div class="intro" id="intro" role="button" tabindex="0" aria-label="Entrar al universo de flores moradas"><div class="intro-inner"><div class="flower-stage"><div class="flower-halo"></div><span class="flower-ring"></span><span class="flower-ring second"></span>
+<svg class="flower-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Flor violeta que se forma pétalo a pétalo" role="img">
+<defs><radialGradient id="petalA" cx="50%" cy="80%" r="80%"><stop offset="0" stop-color="#f5e5ff"/><stop offset=".45" stop-color="#c57bff"/><stop offset="1" stop-color="#7834d0"/></radialGradient><radialGradient id="petalB" cx="50%" cy="80%" r="80%"><stop offset="0" stop-color="#fff5ff"/><stop offset=".55" stop-color="#d9a5ff"/><stop offset="1" stop-color="#9850df"/></radialGradient><radialGradient id="coreColor"><stop offset="0" stop-color="#fff5ff"/><stop offset=".65" stop-color="#dbaaff"/><stop offset="1" stop-color="#7c38c8"/></radialGradient></defs>
+<g transform="rotate(0 100 100)"><ellipse class="bloom-petal" cx="100" cy="48" rx="21" ry="39" fill="url(#petalA)" style="--sx:-2.6px;--sy:-88.0px;--mx:26.5px;--my:-27.3px;--ex:4.6px;--ey:1.9px;--delay:0.18s"/></g>
+<g transform="rotate(45 100 100)"><ellipse class="bloom-petal" cx="100" cy="48" rx="21" ry="39" fill="url(#petalB)" style="--sx:60.4px;--sy:-64.0px;--mx:38.0px;--my:-0.6px;--ex:1.9px;--ey:4.6px;--delay:0.6s"/></g>
+<g transform="rotate(90 100 100)"><ellipse class="bloom-petal" cx="100" cy="48" rx="21" ry="39" fill="url(#petalA)" style="--sx:88.0px;--sy:-2.6px;--mx:27.3px;--my:26.5px;--ex:-1.9px;--ey:4.6px;--delay:1.02s"/></g>
+<g transform="rotate(135 100 100)"><ellipse class="bloom-petal" cx="100" cy="48" rx="21" ry="39" fill="url(#petalB)" style="--sx:64.0px;--sy:60.4px;--mx:0.6px;--my:38.0px;--ex:-4.6px;--ey:1.9px;--delay:1.44s"/></g>
+<g transform="rotate(180 100 100)"><ellipse class="bloom-petal" cx="100" cy="48" rx="21" ry="39" fill="url(#petalA)" style="--sx:2.6px;--sy:88.0px;--mx:-26.5px;--my:27.3px;--ex:-4.6px;--ey:-1.9px;--delay:1.86s"/></g>
+<g transform="rotate(225 100 100)"><ellipse class="bloom-petal" cx="100" cy="48" rx="21" ry="39" fill="url(#petalB)" style="--sx:-60.4px;--sy:64.0px;--mx:-38.0px;--my:0.6px;--ex:-1.9px;--ey:-4.6px;--delay:2.28s"/></g>
+<g transform="rotate(270 100 100)"><ellipse class="bloom-petal" cx="100" cy="48" rx="21" ry="39" fill="url(#petalA)" style="--sx:-88.0px;--sy:2.6px;--mx:-27.3px;--my:-26.5px;--ex:1.9px;--ey:-4.6px;--delay:2.7s"/></g>
+<g transform="rotate(315 100 100)"><ellipse class="bloom-petal" cx="100" cy="48" rx="21" ry="39" fill="url(#petalB)" style="--sx:-64.0px;--sy:-60.4px;--mx:-0.6px;--my:-38.0px;--ex:4.6px;--ey:-1.9px;--delay:3.12s"/></g><g class="flower-core"><circle cx="100" cy="100" r="19" fill="url(#coreColor)"/><circle cx="100" cy="100" r="8" fill="#fff1ff"/></g></svg></div><h2>Un detalle morado para ti</h2><p>TOCA PARA HACER FLORECER EL UNIVERSO ✨</p></div></div>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+const canvas=document.getElementById('sky'),scene=new THREE.Scene();scene.background=new THREE.Color('#080311');scene.fog=new THREE.FogExp2('#080311',.004);
+const camera=new THREE.PerspectiveCamera(62,innerWidth/innerHeight,.1,700);camera.position.set(0,12,48);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.8));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;
+const controls=new OrbitControls(camera,canvas);controls.enableDamping=true;controls.dampingFactor=.05;controls.autoRotate=true;controls.autoRotateSpeed=.35;controls.enablePan=false;controls.minDistance=12;controls.maxDistance=110;
+const universe=new THREE.Group();scene.add(universe);
+function glowTexture(){let c=document.createElement('canvas');c.width=c.height=256;let x=c.getContext('2d'),g=x.createRadialGradient(128,128,0,128,128,128);g.addColorStop(0,'rgba(235,190,255,1)');g.addColorStop(.16,'rgba(176,80,255,.8)');g.addColorStop(.45,'rgba(105,25,200,.24)');g.addColorStop(1,'rgba(75,0,150,0)');x.fillStyle=g;x.fillRect(0,0,256,256);return new THREE.CanvasTexture(c)}
+const glow=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTexture(),transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));glow.scale.set(32,32,1);universe.add(glow);
+const core=new THREE.Mesh(new THREE.SphereGeometry(2.7,32,32),new THREE.MeshBasicMaterial({color:'#11051e'}));universe.add(core);
+for(let j=0;j<3;j++){const ring=new THREE.Mesh(new THREE.TorusGeometry(5+j*3,.06+j*.03,8,180),new THREE.MeshBasicMaterial({color:[0xc879ff,0x7939bd,0x51217e][j],transparent:true,opacity:.65-j*.13}));ring.rotation.x=Math.PI/2.7+j*.14;universe.add(ring)}
+function points(n,rmin,rmax,vertical,size,palette){const pos=new Float32Array(n*3),col=new Float32Array(n*3);for(let i=0;i<n;i++){let a=Math.random()*Math.PI*2,r=rmin+Math.pow(Math.random(),.85)*(rmax-rmin),y=(Math.random()-.5)*vertical*(.35+r/rmax);pos.set([Math.cos(a)*r,y,Math.sin(a)*r],i*3);const c=new THREE.Color(palette[Math.floor(Math.random()*palette.length)]);col.set([c.r,c.g,c.b],i*3)}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));const p=new THREE.Points(g,new THREE.PointsMaterial({size,vertexColors:true,transparent:true,opacity:.8,blending:THREE.AdditiveBlending,depthWrite:false}));universe.add(p);return p}
+const disc=points(6500,3,35,9,.15,['#d3a0ff','#b56aff','#7b3ad8','#efc7ff','#7b56f0']);points(1500,26,85,32,.16,['#b775ff','#7a4db3','#d9a5ff']);
+const starPos=new Float32Array(2600*3);for(let i=0;i<2600;i++){const a=Math.random()*Math.PI*2,u=Math.random()*2-1,r=90+Math.random()*190;starPos.set([r*Math.sqrt(1-u*u)*Math.cos(a),r*u,r*Math.sqrt(1-u*u)*Math.sin(a)],i*3)}const starGeo=new THREE.BufferGeometry();starGeo.setAttribute('position',new THREE.BufferAttribute(starPos,3));scene.add(new THREE.Points(starGeo,new THREE.PointsMaterial({color:'#cbb0ee',size:.6,transparent:true,opacity:.8})));
+function labelTexture(str){const c=document.createElement('canvas');const x=c.getContext('2d');x.font='bold 52px Georgia';let w=Math.ceil(x.measureText(str).width+100);c.width=w;c.height=130;x.font='bold 52px Georgia';x.textAlign='center';x.textBaseline='middle';x.shadowColor='#ae61ff';x.shadowBlur=18;x.strokeStyle='#16071e';x.lineWidth=9;x.strokeText(str,w/2,65);x.fillStyle='#f3dcff';x.fillText(str,w/2,65);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return {t,ratio:w/130}}
+const messages=['Gracias por estar en mi vida','Admiro la persona que eres','Tu compañía es un regalo','Eres mi persona morada 💜','Qué bonito coincidir contigo','Tu presencia transmite paz','Mereces cosas maravillosas','Gracias por escucharme','Tu cariño deja huellas bonitas','El mundo es mejor contigo','Que nunca te falten motivos para sonreír','Siempre es bonito contar contigo','Hay afectos que florecen para siempre','Gracias por ser tú','9 de octubre · Flores moradas'];
+const floaters=[];messages.forEach((m,i)=>{let {t,ratio}=labelTexture(m),s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,depthWrite:false}));let a=i/messages.length*Math.PI*2,r=21+(i%4)*7;s.position.set(Math.cos(a)*r,(i%5-2)*3.4,Math.sin(a)*r);s.scale.set(Math.min(13,ratio*1.4),1.4,1);s.userData={y:s.position.y,phase:i*.9};universe.add(s);floaters.push(s)});
+function flowerTexture(emoji){let c=document.createElement('canvas');c.width=c.height=180;let x=c.getContext('2d');x.font='135px "Segoe UI Emoji","Apple Color Emoji",sans-serif';x.textAlign='center';x.textBaseline='middle';x.fillText(emoji,90,94);let t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t}
+const flowerTextures=['🪻','💜','🫟','🌑','✨​'].map(flowerTexture);for(let i=0;i<110;i++){let a=Math.random()*Math.PI*2,r=9+Math.random()*75,s=new THREE.Sprite(new THREE.SpriteMaterial({map:flowerTextures[i%4],transparent:true,depthWrite:false}));s.position.set(Math.cos(a)*r,(Math.random()-.5)*25,Math.sin(a)*r);let sz=.9+Math.random()*1.7;s.scale.set(sz,sz,1);s.userData={y:s.position.y,phase:i*.55};universe.add(s);floaters.push(s)}
+const clock=new THREE.Clock();let active=false;function frame(){requestAnimationFrame(frame);const t=clock.getElapsedTime();if(active&&!matchMedia('(prefers-reduced-motion: reduce)').matches){disc.rotation.y=t*.016;universe.rotation.y=t*.008;glow.scale.setScalar(31+Math.sin(t*1.3)*2);floaters.forEach(s=>s.position.y=s.userData.y+Math.sin(t*.7+s.userData.phase)*.5)}controls.update();renderer.render(scene,camera)}frame();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+const intro=document.getElementById('intro');function start(){if(active)return;active=true;const audio=document.getElementById('backgroundMusic');const musicControls=document.getElementById('musicControls');musicControls.hidden=false;audio.volume=.45;audio.play().catch(()=>{document.getElementById('muteMusic').textContent='▶';document.getElementById('muteMusic').title='Toca para reproducir música';});for(let i=0;i<42;i++){let p=document.createElement('span');p.className='petal';p.textContent=i%3?'💜':'🪻';p.style.left='50%';p.style.top='50%';let a=Math.random()*Math.PI*2,d=80+Math.random()*Math.max(innerWidth,innerHeight)*.65;p.style.setProperty('--x',Math.cos(a)*d+'px');p.style.setProperty('--y',Math.sin(a)*d+'px');p.style.setProperty('--r',Math.random()*720+'deg');document.body.appendChild(p);setTimeout(()=>p.remove(),1600)}intro.classList.add('out');setTimeout(()=>intro.remove(),950)}intro.addEventListener('click',start);intro.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();start()}});
+</script>
+<script>
+const modal=document.getElementById('modal'),phraseModal=document.getElementById('phraseModal');function openModal(el){el.hidden=false;el.querySelector('.close').focus()}function closeModal(el){el.hidden=true}document.getElementById('open').onclick=()=>openModal(modal);document.getElementById('close').onclick=()=>closeModal(modal);document.getElementById('closePhrase').onclick=()=>closeModal(phraseModal);[modal,phraseModal].forEach(el=>el.addEventListener('click',e=>{if(e.target===el)closeModal(el)}));addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal(modal);closeModal(phraseModal)}});
+const phrases=['Eres mi persona morada: esa que llega sin hacer ruido y se queda cuando más se necesita.','Gracias por ser ese lugar donde todo se siente un poco más tranquilo.','Hay personas que son como un abrazo, incluso desde lejos.','Eres de esas personas que te dan paz con solo estar.','No sé qué haría sin tus mensajes que llegan justo cuando los necesito.','Contigo hasta los días grises se ven un poco más morados.','Eres mi lugar seguro favorito, sin paredes y sin condiciones.','Admiro tu fuerza, tu esencia y la manera en que sigues floreciendo.','Admiro la mujer que eres: fuerte, noble y con un corazón enorme.','Admiro al hombre que eres: firme, honesto y de los que sostienen sin decirlo.','Te respeto profundamente, no solo por lo que haces, sino por quién eres.','Ver cómo avanzas me inspira más de lo que imaginas.','Tu entereza merece flores moradas: esas que hablan de respeto y admiración.','Eres de esas personas que no necesitan demostrar nada para ser admirables.','Gracias por escucharme sin prisa y sin juicios.','Gracias por las veces que te quedaste cuando podías haberte ido.','Gracias por demostrar que hay cariños que no hacen ruido pero se sienten todo.','Si algún día dudas de lo que vales, recuerda que aquí hay alguien muy agradecido contigo.','Gracias por estar en las buenas, pero sobre todo en las no tan buenas.','Tu compañía es un regalo que no se envuelve, se agradece.','Tu amistad, tu cariño y tu presencia valen más de lo que imaginas.','Hay afectos que florecen para siempre, como estas flores moradas.','Te quiero con una calma que no necesita explicaciones.','Eres una de esas coincidencias que se agradecen de corazón.','Si tuviera que elegir a alguien para un día difícil, te elegiría a ti otra vez.','Tu cariño deja huellas bonitas donde pasa.','No hace falta compartir la misma sangre para sentirse familia.','A veces uno elige a su familia, y yo te elegiría a ti mil veces.','Contigo aprendí que un "te cuidas" dicho a tiempo vale más que mil regalos.','Estas flores moradas no son casualidad: significan admiración, respeto y gratitud.','Las flores moradas hablan sin gritar, como tú: con presencia y con calma.','Si las flores moradas representan afecto sincero, entonces son tuyas.','Te regalo flores moradas porque no hay color que describa mejor lo que siento.','Que estas flores te recuerden lo importante que eres.','Ojalá la vida te devuelva todo lo bonito que das sin darte cuenta.','Que nunca te falten motivos para sonreír, ni personas que te cuiden.','Si algún día dudas de ti, recuerda que hay alguien orgulloso de conocerte.','Mereces un mundo que te trate tan bien como tú tratas a los demás.','Feliz 9 de octubre: hoy las flores moradas son para ti.','Hoy no es un día cualquiera: es el día de regalar flores moradas a quien se lo merece.','Flores moradas para ti, porque te lo ganaste sin saberlo.','Un detalle morado para alguien que hace la vida más bonita.'];let previous=-1;function newPhrase(){let i;do{i=Math.floor(Math.random()*phrases.length)}while(i===previous&&phrases.length>1);previous=i;document.getElementById('randomPhrase').textContent=phrases[i]}document.getElementById('phrases').onclick=()=>{newPhrase();openModal(phraseModal)};document.getElementById('another').onclick=newPhrase;document.getElementById('reset').onclick=()=>location.reload();document.getElementById('share').onclick=async()=>{const data={title:'Flores moradas 💜',text:'Estas flores moradas son para ti 💜',url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);alert('¡Enlace copiado! 💜')}}catch(e){if(e.name!=='AbortError')alert('Copia el enlace desde la barra del navegador.')}};
+</script>
+<script>
+const music=document.getElementById('backgroundMusic');
+const muteButton=document.getElementById('muteMusic');
+let lastVolume=.45;
+function updateMusicUI(){
+  const silent=music.muted||music.volume===0;
+  muteButton.textContent=music.paused?'▶':silent?'🔇':'🔊';
+  muteButton.setAttribute('aria-label',
+    music.paused?'Reproducir música':
+    silent?'Activar sonido':'Silenciar música');
+}
+muteButton.addEventListener('click',async()=>{
+  if(music.paused){
+    music.muted=false;
+    if(music.volume===0)music.volume=lastVolume||.45;
+    try{await music.play()}
+    catch(e){alert('No se pudo reproducir musica.mp3. Comprueba que esté junto a index.html.')}
+  }else if(music.muted||music.volume===0){
+    music.muted=false;
+    music.volume=lastVolume||.45;
+  }else{
+    lastVolume=music.volume;
+    music.muted=true;
+  }
+  updateMusicUI();
+});
+music.addEventListener('play',updateMusicUI);
+music.addEventListener('pause',updateMusicUI);
+music.addEventListener('error',()=>{
+  muteButton.textContent='⚠';
+  muteButton.title='No se encontró musica.mp3';
+});
+</script>
+</body></html>
